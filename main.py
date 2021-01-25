@@ -19,7 +19,7 @@ class blogsite(unittest.TestCase):
         assert page_found.isPageFound()
 
     def tearDown(self):
-        self.driver.quit()
+        self.driver.close()
 
 if __name__ == "__main__":
     unittest.main()
