@@ -1,4 +1,4 @@
-
+from locator import *
 
 class basePage(object):
 
@@ -12,5 +12,11 @@ class homePage(basePage):
         return "Application" in self.driver.title
 
     def click_1st_post(self):
-        element = self.driver.find_element()
+        element = self.driver.find_element(*homePageLocators.FIRST_POST)
         element.click()
+
+class postResultPage(basePage):
+
+    def isPageFound(self):
+        return "No result found" not in self.driver.page_source
+
